@@ -83,5 +83,7 @@ Comparison of all chromosomes using loop->inneloop has a worst case running time
 
 Did you, at any point, exploit that our features are on single nucleotides and not larger regions?
 
+AWNSER:
+Im not sure if i understand the questions correctly but im pretty sure that the code does handle larger regions. The code works by matching start/end positions of a region and thus doesnt use single nucleotides. 
 
 If you did, what would it take to handle general regions?

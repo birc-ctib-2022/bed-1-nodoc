@@ -1,14 +1,18 @@
 """Tool for cleaning up a BED file."""
 
 import argparse  # we use this module for option parsing. See main for details.
-
 import sys
 from query import Table
 from bed import (parse_line, print_line)
 
 
 def main():
-    """Run the program."""
+    """Run the program.
+
+    Example:
+    python3 query_bed.py Data/simpleBED.bed Data/query.txt
+
+    """
     # Setting up the option parsing using the argparse module
     argparser = argparse.ArgumentParser(
         description="Extract regions from a BED file")
