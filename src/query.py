@@ -22,16 +22,16 @@ from collections import defaultdict
 class Table:
     """Table containing bed-lines."""
 
-    tbl: dict[str, list[BedLine]]
+    tbl: dict([])
 
-    def __init__(self) -> None:
+    def __init__(self):
         """Create a new table."""
         self.tbl = defaultdict(lambda: [])
 
-    def add_line(self, line: BedLine) -> None:
+    def add_line(self, line: BedLine):
         """Add line to the table."""
         self.tbl[line.chrom].append(line)
 
-    def get_chrom(self, chrom: str) -> list[BedLine]:
+    def get_chrom(self, chrom: str):
         """Get all the lines that sits on chrom"""
         return self.tbl[chrom]

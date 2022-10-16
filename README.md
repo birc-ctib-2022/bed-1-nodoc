@@ -66,8 +66,24 @@ When you have implemented the tool, answer the questions below, commit it to Git
 
 How does your method for extracting features work?
 
+AWNSER:
+First uses a for-loop to add each line from a .bed file into a 
+query-table.
+Similarily all lines in the query file are processed in a for-loop while a inner-loop matches the interval against all rows in the table containing the same chromosome as the coresponding line in the query file.
+
+
+
 What is the complexity of the algorithm, as a function of the size of the two input files? When you answer this, you need to know that you can get the list of chromosomse from a `query.Table` in constant time, but it does, of course, take longer to run through all the lines in it.
 
+AWNSER:
+Making the query-table: single forloop reading one line at a time while adding it to the query table = linear time. 
+Comparison of all chromosomes using loop->inneloop has a worst case running time of O(n^2) (e.g. all chroms are the same).
+
+
+
 Did you, at any point, exploit that our features are on single nucleotides and not larger regions?
+
+AWNSER:
+Im not sure if i understand the questions correctly but im pretty sure that the code does handle larger regions. The code works by matching start/end positions of a region and thus doesnt use single nucleotides. 
 
 If you did, what would it take to handle general regions?

@@ -16,7 +16,7 @@ BedLine = NamedTuple("BedLine", [
 ])
 
 
-def parse_line(line: str) -> BedLine:
+def parse_line(line: str):
     """Parse a single line from a BED file (with four columns).
 
     >>> parse_line('chr1   20_100  20_101  foo')
@@ -28,11 +28,22 @@ def parse_line(line: str) -> BedLine:
     """
     chrom, start, end, name = line.split()  # split on any white-space
     bed_line = BedLine(chrom, int(start), int(end), name)
-    assert bed_line.chrom_start + 1 == bed_line.chrom_end
+    #assert bed_line.chrom_start + 1 == bed_line.chrom_end
     return bed_line
 
 
-def print_line(line: BedLine, f: TextIO) -> None:
+def print_line(line: BedLine, f: TextIO):
     """Prints line to the stream f as a BED line."""
     print(line.chrom, line.chrom_start,
           line.chrom_end, line.name, file=f, sep='\t')
+
+
+
+
+
+
+
+
+
+
+

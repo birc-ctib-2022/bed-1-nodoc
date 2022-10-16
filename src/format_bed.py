@@ -10,7 +10,13 @@ from bed import (
 
 
 def main() -> None:
-    """Run the program."""
+    """Run the program.
+    
+    Example:
+    python3 format_bed.py simpleBED.bed new.bed
+    
+    """
+    
     # Setting up the option parsing using the argparse module
     argparser = argparse.ArgumentParser(description="Cleans up a BED file")
     # 'infile' is either provided as an input file name or stdin
@@ -29,6 +35,8 @@ def main() -> None:
 
     # With all the options handled, we just need to do the real work
     # FIXME: put your code here
+    for line in args.infile:
+        print_line(parse_line(line), args.outfile)
 
 
 if __name__ == '__main__':
